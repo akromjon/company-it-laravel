@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','PagesController@index')->name('main');
+Route::prefix('/services')->group(function()
+{
+    Route::get('/','ServicesController@index')->name('services.index');
+});
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
